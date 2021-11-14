@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
-
-
+@import "https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap";
 .container {
     display: flex;
     flex-direction: column;
@@ -8,20 +6,24 @@
     justify-content: center;
 }
 
+
 .title {
     font-family: "Segoe UI", Georgia, sans-serif;
     font-size: 50px;
 }
+
 
 .image {
     width: 300px;
     padding: 20px;
 }
 
+
 #search-bar {
     border: 2px solid hsl(0, 0%, 63%);
     border-radius: 10px;
 }
+
 
 #search-value {
     height: 28px;
@@ -31,6 +33,7 @@
     background-color: transparent;
 }
 
+
 #search-button {
     height: 34px;
     width: 100px;
@@ -38,6 +41,7 @@
     border-radius: 0 10px 10px 0;
     background-color: hsl(195, 100%, 50%);
 }
+
 
 #country-element {
     margin: 20px;
@@ -49,10 +53,12 @@
     box-shadow: 5px 5px 15px grey;
 }
 
+
 .flag {
     height: 50px;
     margin-right: 20px;
 }
+
 
 #country-name {
     font-family: 'Indie Flower', cursive;
@@ -61,13 +67,17 @@
     margin: 0;
 }
 
+
 #line {
     height: 1px;
     background-color: hsl(0, 0%, 63%);
     margin-bottom: 10px;
 }
 
+
 #country-element p {
     font-family: "Segoe UI", Georgia, sans-serif;
     margin: 3px;
 }
+
+/*# sourceMappingURL=index.be5cf2f4.css.map */

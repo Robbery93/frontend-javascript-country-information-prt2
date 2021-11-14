@@ -3,8 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Country Information - Country searcher</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+<div class="container">
+    <h1 class="title">Country Searcher</h1>
+    <img src="assets/country-searcher-img.jpg" alt="Globe with pointer" class="image">
 
+    <form id="search-bar" onsubmit="return false">
+        <input type="text" id="search-value" placeholder="For example Greece">
+        <button type="submit" id="search-button">SEARCH</button>
+    </form>
+
+    <div id="country-element"></div>
+
+</div>
+<script src="app.js" type="module"></script>
 </body>
 </html>
