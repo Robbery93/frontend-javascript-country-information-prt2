@@ -462,25 +462,27 @@ function hmrAcceptRun(bundle, id) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _axios = require("axios");
 var _axiosDefault = parcelHelpers.interopDefault(_axios);
-async function getCountry() {
+async function getCountry(input) {
     try {
-        const result = await _axiosDefault.default.get(`https://restcountries.com/v2/name/greece`);
+        const result = await _axiosDefault.default.get(`https://restcountries.com/v2/name/${input}`);
         const data = result.data[0];
         await createCountryElement(data);
     } catch (e) {
         console.log(e);
-        if (e instanceof TypeError) window.alert("Land niet gevonden");
+        if (e instanceof TypeError) alert("Land niet gevonden");
     }
 }
 const createCountryElement = (data)=>{
     const countryElement = document.getElementById('country-element');
     const { name , subregion , population , capital , flag , currencies , languages  } = data;
     countryElement.innerHTML = `
+        <div class="country-container">
         <h1 id="country-name"><img src=${flag} alt="flag" class="flag" />${name}</h1>
         <div id="line"></div>
         <p>${name} is situated in ${subregion}. It has a population of ${population} people.</p>
         <p>The capital city is ${capital}, and you can pay with ${getCurrency(currencies)}.</p>
         <p>They speak ${getLanguages(languages)}.</p>
+        </div>
         `;
 };
 const getCurrency = (currencies)=>{
@@ -498,12 +500,12 @@ const getLanguages = (languages)=>{
     }
     return outcome;
 };
-getCountry(); // const searchBar = document.getElementById("search-bar")
- // const searchBarInput = document.getElementById('search-value');
- // searchBar.addEventListener("submit", () => {
- //     getCountry(searchBarInput.value)
- //     searchBarInput.value = "";
- // })
+const searchBar = document.getElementById("search-bar");
+const searchBarInput = document.getElementById('search-value');
+searchBar.addEventListener('submit', (e)=>{
+    e.preventDefault();
+    getCountry(searchBarInput.value);
+});
 
 },{"axios":"1IeuP","@parcel/transformer-js/src/esmodule-helpers.js":"ciiiV"}],"1IeuP":[function(require,module,exports) {
 module.exports = require('./lib/axios');
